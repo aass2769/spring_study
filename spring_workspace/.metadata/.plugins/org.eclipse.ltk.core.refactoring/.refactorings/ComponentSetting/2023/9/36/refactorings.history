@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename package &apos;kr.co.softcampus.maib&apos; to &apos;kr.co.softcampus.main&apos;&#x0D;&#x0A;- Original project: &apos;ComponentSetting&apos;&#x0D;&#x0A;- Original element: &apos;ComponentSetting/src/main/java/kr.co.softcampus.maib&apos;&#x0D;&#x0A;- Renamed element: &apos;ComponentSetting/src/main/java/kr.co.softcampus.main&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;kr.co.softcampus.maib&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.co.softcampus.maib" name="kr.co.softcampus.main" qualified="false" references="true" stamp="1694243614757" textual="false" version="1.0"/>
-</session>

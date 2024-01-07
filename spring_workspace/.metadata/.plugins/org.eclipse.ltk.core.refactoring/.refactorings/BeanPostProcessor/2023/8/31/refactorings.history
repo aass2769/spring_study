@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete element from project &apos;BeanPostProcessor&apos;&#x0D;&#x0A;- Original project: &apos;BeanPostProcessor&apos;&#x0D;&#x0A;- Original element: &apos;BeanPostProcessor/src/main/java/kr.co.softcampus.config&apos;" description="Delete element" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.co.softcampus.config" element2="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.co.softcampus" element3="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.co" element4="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr" elements="4" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1690875268356" subPackages="false" version="1.0"/>
-</session>
