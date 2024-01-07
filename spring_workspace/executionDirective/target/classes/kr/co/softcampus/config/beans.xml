@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/aop
+						http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- 빈 등록 -->
+	<bean id="xml1" class="kr.co.softcampus.beans.TestBean1"/>
+	<bean id="xml2" class="kr.co.softcampus.beans.TestBean2"/>
+	<bean id="xml3" class="kr.co.softcampus.beans2.TestBean1"/>
+	<bean id="advisor1" class="kr.co.softcampus.advisor.AdvisorClass"/>
+	
+	<!-- AOP 설정 -->
+	<aop:config>
+		<aop:aspect ref="advisor1">
+			<!-- 반환타입이 void, kr.co.softcampus.beans.TestBean1 클래스, method1 메서드, 매개변수 없음 -->
+			<!-- <aop:pointcut id="point1" expression="execution(void kr.co.softcampus.beans.TestBean1.method1())"/> -->
+		
+			<!-- 반환타입이 void, kr.co.softcampus.beans.TestBean1 클래스, method1 메서드, 정수형 매개변수 1개 -->
+			<!-- <aop:pointcut id="point1" expression="execution(void kr.co.softcampus.beans.TestBean1.method1(int))"/> -->
+		
+			<!-- 반환타입이 void, kr.co.softcampus.beans.TestBean1 클래스, method1 메서드, String타입 매개변수 1개 -->
+			<!-- <aop:pointcut id="point1" expression="execution(void kr.co.softcampus.beans.TestBean1.method1(java.lang.String))"/> -->
+			
+			<!-- 반환타입이 void, kr.co.softcampus.beans.TestBean1 클래스, method1 메서드, 모든 타입의 매개변수 1개 -->
+			<!-- <aop:pointcut id="point1" expression="execution(void kr.co.softcampus.beans.TestBean1.method1(*))"/> -->
+			
+			<!-- 반환타입이 void, kr.co.softcampus.beans.TestBean1 클래스, method1 메서드, 정수형 매개변수 2개 -->
+			<!-- <aop:pointcut id="point1" expression="execution(void kr.co.softcampus.beans.TestBean1.method1(int, int))"/> -->
+			
+			<!-- 반환타입이 void, kr.co.softcampus.beans.TestBean1 클래스, method1 메서드, 정수형 매개변수 1개, String 타입 매개변수 1개 -->
+			<!-- <aop:pointcut id="point1" expression="execution(void kr.co.softcampus.beans.TestBean1.method1(int, java.lang.String))"/> -->
+			
+			<!-- 반환타입이 void, kr.co.softcampus.beans.TestBean1 클래스, method1 메서드, 모든 타입의 매개변수 2개-->
+			<!-- <aop:pointcut id="point1" expression="execution(void kr.co.softcampus.beans.TestBean1.method1(*, *))"/> -->
+			
+			<!-- 반환타입이 void, kr.co.softcampus.beans.TestBean1 클래스, method1 메서드, 모든 타입의 매개변수 0개 이상-->
+			<!-- <aop:pointcut id="point1" expression="execution(void kr.co.softcampus.beans.TestBean1.method1(..))"/> -->
+			
+			<!-- 반환타입이 void, kr.co.softcampus.beans.TestBean1 클래스, 모든 메서드-->
+			<!-- <aop:pointcut id="point1" expression="execution(void kr.co.softcampus.beans.TestBean1.*(..))"/> -->
+			
+			<!-- 반환타입이 void, kr.co.softcampus.beans패키지의 모든 클래스, method1 메서드-->
+			<!-- <aop:pointcut id="point1" expression="execution(void kr.co.softcampus.beans.*.method1(..))"/> -->
+			
+			<!-- 반환타입이 void, kr.co.softcampus.beans패키지의 모든 클래스, 모든 메서드-->
+			<!-- <aop:pointcut id="point1" expression="execution(void kr.co.softcampus.beans.*.*(..))"/> -->
+			
+			<!-- 반환타입이 void, kr.co.softcampus.모든 패키지의 모든 클래스, 모든 메서드-->
+			<!-- <aop:pointcut id="point1" expression="execution(void kr.co.softcampus.*.*.*(..))"/> -->
+			
+			<!-- 반환타입이 void, 모든 패키지, 모든 클래스, 모든 메서드 -->
+			<!-- <aop:pointcut id="point1" expression="execution(void *.*(..))"/> -->
+			
+			<!-- 반환타입이 int, 모든 패키지, 모든 클래스, 모든 메서드 -->
+			<!-- <aop:pointcut id="point1" expression="execution(int *.*(..))"/> -->
+			
+			<!-- 모든 반환타입, 모든 패키지, 모든 클래스, 모든 메서드 -->
+			<aop:pointcut id="point1" expression="execution(* *.*(..))"/>
+			
+			<!-- 모든 반환타입, 모든 패키지, 모든 클래스, method1 메서드 -->
+			<aop:pointcut id="point1" expression="execution(* method1(..))"/>
+			
+			
+			
+			<aop:before method="beforeMethod" pointcut-ref="point1"/>
+		
+		</aop:aspect>
+	</aop:config>
+</beans>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="t1" class="kr.co.softcampus.beans.TestBean">
+		<!-- 제네릭이 String인 List -->
+		<property name="list1">
+			<list>
+				<value>문자열1</value>
+				<value>문자열2</value>
+				<value>문자열3</value>
+			</list>
+		</property>
+		<!-- 제네릭이 Integer인 List -->
+		<property name="list2">
+			<list>
+				<!-- type으로 자료형을 지정할 수 있는데 문자열이 아닌이상 type을 지정해주는게 좋다 -->
+				<value type="int">100</value>
+				<value type="int">200</value>
+				<value type="int">300</value>
+			</list>
+		</property>
+		
+		<!-- 제네릭이 DataBean인 List -->
+		<property name="list3">
+			<list>
+				<!-- 빈을 직접 생성 -->
+				<bean class="kr.co.softcampus.beans.DataBean"/>
+				<bean class="kr.co.softcampus.beans.DataBean"/>
+				
+				<!-- 이미 생성되있는 빈을 이용 -->
+				<ref bean ="data_bean"/>
+				<ref bean ="data_bean"/>
+			</list>
+		</property>
+		<!-- 제네릭이 String인 Set -->
+		<property name="set1">
+			<set>
+				<value>문자열1</value>
+				<value>문자열1</value>
+				<value>문자열3</value>
+			</set>
+		</property>
+		
+		<!-- 제네릭이 Integer인 Set  -->
+		<property name="set2">
+			<set>
+				<value type="int">100</value>
+				<value type="int">200</value>
+				<value type="int">300</value>
+			</set>
+		</property>
+		
+		<!-- 제네릭이 DataBean인 Set -->
+		<property name="set3">
+			<set>
+				<!-- 빈을 직접 생성 -->
+				<bean class="kr.co.softcampus.beans.DataBean"/>
+				<bean class="kr.co.softcampus.beans.DataBean"/>
+				<!-- 이미 생성되있는 빈을 이용 -->
+				<!-- Set이기 떄문에 아이디가 같은 빈을 중복해서 주입하면 하나만 들어감 -->
+				<ref bean="data_bean"/>
+				<ref bean="data_bean"/>
+			</set>
+		</property>
+		
+		<!-- Map -->
+		<property name="map1">
+			<map>
+				<entry key="a1" value="문자열"/>
+				<entry key="a2" value="100" value-type="int"/>
+				<entry key="a3">
+					<bean class="kr.co.softcampus.beans.DataBean"/>
+				</entry>
+				<entry key="a4" value-ref="data_bean"/>
+				<entry key="a5">
+					<list>
+						<value>문자열1</value>
+						<value>문자열2</value>
+						<value>문자열3</value>
+					</list>
+				</entry>
+			</map>
+		
+		</property>
+		
+		<!--property  -->
+		<property name="prop1">
+			<props>
+				<prop key="p1">문자열1</prop>
+				<prop key="p2">문자열2</prop>
+				<prop key="p3">문자열3</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="data_bean" class="kr.co.softcampus.beans.DataBean" scope="prototype"/>
+</beans>

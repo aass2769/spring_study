@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- bean 클래스에 설정되어 있는 어노테이션을 이용한다. -->
+	<!-- 생성자를 통해 주입할 때 xml로 주입하면은 autowired를 하지 않아도 자동주입된다 -->
+	<context:annotation-config/>
+	
+	<bean id="xml1" class="kr.co.softcampus.beans.TestBean1">
+		<property name="data1" value="100"/>
+	</bean>
+	
+	<bean class="kr.co.softcampus.beans.DataBean1"/>
+	
+	<bean id="obj4" class="kr.co.softcampus.beans.DataBean2"/>
+	<bean id="obj5" class="kr.co.softcampus.beans.DataBean2"/>
+	
+	<bean id="xml2" class="kr.co.softcampus.beans.TestBean2"/>
+	
+	<bean class="kr.co.softcampus.beans.DataBean3"/>
+	<bean class="kr.co.softcampus.beans.DataBean4"/>
+</beans>
