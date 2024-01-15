@@ -2,7 +2,7 @@
 Spring을 공부하며 각 프로젝트를 구분하고 정리했습니다.<br><br><br><br>
 #  :file_folder:Project
 :heartpulse: 1.JavaBasic_01 : 자바 프로젝트의 문제점 - 클래스가 변경되면 객체 생성 부분과 참조 변수 선언 모두 수정해야함.<br><br>
-:green_heart: 2.Polymophism : 다형성의 문제점 - 참조변수는 수정하지 않아두 되지만 객체 생성 코드는 변경해야함.<br><br>
+:green_heart: 2.Polymophism : 다형성의 문제점 - 참조변수는 수정하지 않아도 되지만 객체 생성 코드는 변경해야 함.<br><br>
 :blue_heart: 3.SpringBasic : beans.xml과 pom.xml, maven 적용법 등 스프링 기본 프로젝트 작성<br><br>
 
  ## :heavy_check_mark: IoC :heavy_check_mark:
@@ -11,7 +11,7 @@ Spring을 공부하며 각 프로젝트를 구분하고 정리했습니다.<br><
 :green_heart: 5.BeanCreate : bean에 속성. id, class, lazy-init, scope. lazy-init은 getBean()을 통해 객체를 생성할 건지 정할 수 있다.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lazy-init을 true로 하지않으면 객체는 자동 생성된다.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scope="prototype"으로 singleton이 아닌 getBean()떄마다 객체 생성을 할 수 있다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; singleton은 객체를 하나만 생성하여 쓰고 prototype은 객체를 getBean()떄마다 생성한다.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; singleton은 객체를 하나만 생성하여 쓰고 prototype은 객체를 getBean()할 때마다 생성한다.<br><br>
 :blue_heart: 6.BeanLifeCycle : init-method, destroy-method 와 default-init-method와 default-destroy-method로 Bean객체의 생명주기를 조절할 수 있다.<br><br>
 :purple_heart: 7.BeanPostProcessor : BeanPostProcessor 인터페이스를 구현한 클래스를 정의하면<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bean객체를 생성할 때 호출될 init-method 호출을 가로채 다른메서드를 호출 할 수 있다.<br><br>
@@ -32,7 +32,7 @@ confiuation에서 자동주입함(예전 방식)<br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bean클래스에서 autowired 시킴(최근방식)
 		xml과 java를 사용한 필드, 생성자, setter 자동주입.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xml에서 autowire를 사용하려면 xml에 <context:annotation-config/>태그를 사용해야함<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xml에서 생성자 자동주입을 할 떄는 autowired를 쓰지 않아도 자동주입됌<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xml에서 생성자 자동주입을 할 때는 autowired를 쓰지 않아도 자동주입됨<br><br>
 :heartpulse: 16.JSR-250 : 어노테이션을 추가적으로 사용할 수 있으며, 빈에서 @PostConstruct로 생성자 호출 이후 자동호출한다.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @PreDestroy로 객체가 소멸되기 전에 자동으로 호출한다.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @Resource로 타입으로 자동주입하는 Autowired와 Qualifier 설정 대신 이름으로 자동주입 할 수 있다.<br><br>
