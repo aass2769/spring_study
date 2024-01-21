@@ -27,7 +27,7 @@ Spring을 공부하며 각 프로젝트를 구분하고 정리했습니다.<br><
 :heartpulse: 12.JavaBeanConfiguration : 자바 파일을 이용해 @Configuration, @Bean, @Lazy, @ primary 사용해보기.<br><br>
 :green_heart: 13.initDestroy : initMethod와 destroyMethod를 이용하여 객체 생성 및 소멸 시 호출 될 메서드를 등록할 수 있다.<br><br>
 :blue_heart: 14.JavaDI : 생성자와 setter을 통한 직접주입과 autowire by_name과 by_type을 통한 자동주입(예전 방식)
-confiuation에서 자동주입함(예전 방식)<br><br>
+configuration에서 자동주입함(예전 방식)<br><br>
 :purple_heart: 15.AnnotationBean : configuration에서 자동주입하는게 아니라<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bean클래스에서 autowired 시킴(최근방식)
 		xml과 java를 사용한 필드, 생성자, setter 자동주입.<br>
